@@ -11,6 +11,9 @@ function multiply(first, second) {
 }
 
 function divide(first, second) {
+    if (second === 0) {
+        return "Ha! You can’t divide by zero.";
+    }
     return first / second;
 }
 
