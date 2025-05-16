@@ -1,0 +1,104 @@
+/* === page & calculator centering === */
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: #f0f0f0;
+}
+
+#calculator {
+  width: 360px;                 /* total calculator width */
+  background: #222;             /* dark frame color */
+  padding: 4px;                 /* frame thickness */
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* === display at top === */
+#display {
+  width: 100%;
+  height: 80px;
+  background: #e6e6e6;          /* light gray background */
+  color: #000;
+  font-size: 2.4rem;
+  text-align: right;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 6px;
+  border: 2px solid #222;      /* inner border to match frame */
+  border-radius: 4px;
+}
+
+/* === top action row (clear / =) === */
+.actions {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.actions button {
+  flex: 1;                     /* two buttons share the row equally */
+  height: 60px;
+  background: #4d8bf1;         /* bright blue */
+  color: #fff;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.actions button:active {
+  background: #3a6fd1;
+}
+
+/* === container for numbers + operators === */
+#container {
+  display: flex;
+  gap: 6px;
+}
+
+/* number pad: 3 columns, takes 75% of width */
+.numbers {
+  flex: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.numbers button {
+  width: calc(33.333% - 6px);
+  height: 60px;
+  background: #3ba87c;         /* greenish */
+  color: #000;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.numbers button:active {
+  background: #339f71;
+}
+
+/* operator column: takes 25% of width, stacked */
+.operators {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.operators button {
+  flex: 1;
+  height: 60px;
+  background: #f5a623;         /* orange */
+  color: #000;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.operators button:active {
+  background: #d48d1f;
+}
+
+/* optional: make sure “0” spans two columns if you add that in HTML */
+/* .zero { width: calc(66.666% - 6px); } */
